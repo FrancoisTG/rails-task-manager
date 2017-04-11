@@ -1,0 +1,22 @@
+<div class="container">
+<h1>Task details</h1>
+
+<h2><%=@task.name%></h2>
+<ul>
+  <li><%=@task.category%></li>
+  <li><%="#{@task.duration} "%>hours</li>
+</ul>
+
+  <br>
+  <div class="btn btn-success">
+  <%= link_to "Delete", task_path(@task),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+  </div><br>
+  <div class="btn btn-success">
+  <%= link_to "Edit", edit_task_path(@task) %>
+  </div><br>
+  <div class="btn btn-success">
+  <%= link_to "Back to index", tasks_path %>
+  </div>
+</div>
